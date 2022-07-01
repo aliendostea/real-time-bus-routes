@@ -1,0 +1,132 @@
+@use "../../../sass/abstracts/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@100,400;125,555&display=swap");
+.nav {
+  width: 100%;
+  height: 9rem;
+  display: grid;
+  align-items: center;
+  padding: 0 3rem;
+  backdrop-filter: saturate(91%) blur(6px);
+  background: rgba(255, 255, 255, 0.05);
+  position: fixed;
+  font-family: "Anek Latin", sans-serif;
+  z-index: 10;
+
+  &__inner-box {
+    display: grid;
+    grid-template-columns: max-content 10rem;
+    justify-content: space-between;
+    font-family: "Anek Latin", sans-serif;
+  }
+
+  &__box1 {
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    span {
+      font-family: "Anek Latin", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: 125%;
+      font-size: 3rem;
+      line-height: initial;
+      color: #ee6df9;
+    }
+  }
+  &__box2 {
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.modal {
+  width: 46rem;
+  height: 44rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-rows: min-content;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
+  border-radius: 15px;
+  backdrop-filter: saturate(91%) blur(6px);
+  background-color: rgba(17, 8, 131, 0.9);
+  color: #dbdbdb;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  top: 6rem;
+  right: 5rem;
+  z-index: 11;
+
+  @include respond(tab-port) {
+    width: 30rem;
+    right: 1rem;
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(12rem, 12.5rem));
+    gap: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    @include respond(tab-port) {
+      grid-template-rows: repeat(auto-fit, minmax(19rem, 19.5rem));
+    }
+  }
+
+  &-title {
+    font-family: "Anek Latin", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: 125%;
+    font-size: 2.2rem;
+    line-height: initial;
+    color: #ee6df9;
+  }
+
+  &-element {
+    display: grid;
+    background-color: #dbdbdb;
+    color: rgb(35, 66, 66);
+  }
+}
+.btn-ntfc {
+  width: 4.3rem;
+  height: 4.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+
+  span:first-child {
+    font-size: 22px;
+    color: aliceblue;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.09);
+
+    span:first-child {
+      color: rgba(240, 248, 255, 0.87);
+    }
+  }
+
+  &__element {
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #ee6df9;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+  }
+}

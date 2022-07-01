@@ -1,0 +1,91 @@
+@use "../../../sass/abstracts/" as *;
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(18rem, 24rem) 4rem minmax(7rem, 9rem) min-content;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: 1.5rem 2.5rem;
+  border-radius: 15px;
+  backdrop-filter: saturate(91%) blur(6px);
+  background-color: rgb(255 255 255 / 9%);
+  color: #dbdbdb;
+  transition: all 0.2s ease-in-out;
+
+  @include respond(phone) {
+    grid-template-columns: minmax(13rem, 19rem) min-content;
+    gap: 2rem;
+  }
+
+  &-box1 {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    justify-content: center;
+    justify-self: start;
+    align-content: center;
+    gap: 1rem;
+
+    & p {
+      justify-self: center;
+      align-self: center;
+      font-size: 1.65rem;
+    }
+
+    &__destination {
+      font-size: 1.45rem;
+
+      @include respond(phone) {
+        width: 20rem;
+        text-align: left;
+      }
+      @include respond(mini-phone) {
+        width: 15rem;
+      }
+    }
+  }
+
+  &-box2 {
+    @extend .card-box1;
+  }
+}
+
+.slide-top {
+  -webkit-animation: slide-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: slide-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@for $i from 1 through 10 {
+  .slide-top:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.2}s;
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.change-position {
+  -webkit-animation: slide-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: slide-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@keyframes change-position {
+  0% {
+    transform: translateY(calc(100% - 64px * 1));
+  }
+  100% {
+    transform: translateY(calc(100% - 64px * -7));
+  }
+}

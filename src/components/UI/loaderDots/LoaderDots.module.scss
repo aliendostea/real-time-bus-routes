@@ -1,0 +1,61 @@
+.dots {
+  &-element {
+    display: inline-block;
+    position: relative;
+    width: 63px;
+    height: 0;
+    background: aquamarine;
+
+    div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    div:nth-child(1) {
+      left: 4px;
+      animation: b1 0.6s infinite;
+    }
+    div:nth-child(2) {
+      left: 4px;
+      animation: b2 0.6s infinite;
+    }
+    div:nth-child(3) {
+      left: 28px;
+      animation: b2 0.6s infinite;
+    }
+    div:nth-child(4) {
+      left: 52px;
+      animation: b3 0.6s infinite;
+    }
+  }
+}
+
+@keyframes b1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes b3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes b2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

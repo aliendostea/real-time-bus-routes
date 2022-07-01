@@ -1,0 +1,16 @@
+[
+  {
+    "id": "base",
+    "routesVariants": [
+      "add-headers:enabled",
+      "get-bus-routes:success",
+      "get-bus-routes-2:success",
+      "get-bus-routes-3:success"
+    ]
+  },
+  {
+    "id": "no-headers",
+    "from": "base",
+    "routesVariants": ["add-headers:disabled"]
+  }
+]
